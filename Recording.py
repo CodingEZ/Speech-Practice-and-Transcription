@@ -1,36 +1,33 @@
 import pyaudio
 import wave
 
-def recordTo(file):
+def recordTo(file, app, PERIOD=10):
+    """Loosely based off existing recording code with pyaudio."""
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 44100
-    recordTime = 60
 
     audio = pyaudio.PyAudio()
 
-    stream = audio.open(format=FORMAT,
-                        channels=CHANNELS, 
-                        rate=RATE,
-                        input=True,
-                        output=True,
-                        frames_per_buffer=CHUNK)
+    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE,
+                        input=True, output=True, frames_per_buffer=CHUNK)
 
     frames = []
-    print("Recording ... ", end="")
-    for i in range(int(44100 / CHUNK * recordTime)):
+    app.resetLog()
+    app.updateLog(" Recording ... ")
+    for i in range(int(44100 / CHUNK * PERIOD)):
         data = stream.read(CHUNK)
         frames.append(data)
-    print("Finished!")
+    app.updateLog("Finished!\n")
 
-    stream.stop_stream()
+    stream.stop_stream()        # stop stream when finished
     stream.close()
     audio.terminate()
 
-    file = wave.open('Audio/' + file, 'wb')
+    file = wave.open(file, 'wb')        # save to a file
     file.setnchannels(CHANNELS)
     file.setsampwidth(audio.get_sample_size(FORMAT))
-    file.setframeRATE(RATE)
+    file.setframerate(RATE)
     file.writeframes(b''.join(frames))
     file.close()

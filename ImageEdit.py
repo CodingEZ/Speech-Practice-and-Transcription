@@ -1,3 +1,7 @@
+#####################################################
+# Repurposed from Hack 112
+#####################################################
+
 from PIL import Image
 
 def extensionIndex(name):
@@ -5,10 +9,6 @@ def extensionIndex(name):
     while name[index] != '.' and index > -len(name) + 1:
         index -= 1
     return index
-
-#####################################################
-# Repurposed from Hack 112
-#####################################################
 
 def resize_image(name, windowSize, FORMAT='JPEG'):
     img = Image.open(name)
