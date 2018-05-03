@@ -15,8 +15,8 @@ The project requires a number of libraries, which are listed below.
 7. subprocess
 8. pillow
 9. sys, os, io
-The last few libraries as well as additional libraries come with existing
-packages (math, string, etc.).
+
+The last few libraries as well as additional libraries come with existing packages (math, string, etc.).
 
 In order to get Google Speech Recognition working follow the instructions in the following link:
 	https://cloud.google.com/speech-to-text/docs/reference/libraries
