@@ -16,7 +16,7 @@ SPLITPATCH2 = '/splitpatch2.'
 FILENAMES = [SPLICE, PATCH, INSIDEPATCH, SPLITPATCH1, SPLITPATCH2]
 
 # sets up credentials to allow someone who holds the required json file to use speech recognition
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Youtube Transcript Translator-1afc5757090d.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = #AUTHENTICATION FILE NAME
 
 
 def filterName(speechFile, app):
