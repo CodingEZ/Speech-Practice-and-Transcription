@@ -27,4 +27,5 @@ You will need to create a client account in order to obtain the necessary authen
 The other libraries can be installed using pip (pip install) from terminal.
 
 ## How to use this repo
-The way to use this program is to run the main.py file, which opens up a new PyQt5 widget window in which everything is contained. Besides that, there are instruction on inner pages. One thing to note is that the program will display messages after the operation is finished, so the user will have to wait for the recording period to finish and for transcribing to finish.
+The way to use this program is to run the main.py file, which opens up a new PyQt5 widget window in which everything is contained. Besides that, there are instruction on inner pages. One thing to note is that the program will display messages after the operation is finished, so the user will have to wait for the recording period to finish and for transcribing to finish. A quick tutorial can be found in the following Youtube URL:
+	https://youtu.be/KZ4YXXHXItI
