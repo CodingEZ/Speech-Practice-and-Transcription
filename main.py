@@ -370,7 +370,7 @@ class Window(QWidget):
             self.resetLog()
             self.updateLog('    Operation time: %2.3f seconds\n' % (time.time() - start))
         if not os.path.exists('Audio/output/transcription.txt'):
-            displayWarning('You have not made a recording yet!')
+            displayWarning(self, 'You have not made a recording yet!')
             return
         self.recordText = TextCheck.getText('Audio/output/transcription.txt')
         TextCheck.displayText(self)
